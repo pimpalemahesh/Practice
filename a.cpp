@@ -5,11 +5,11 @@ vector<int> dj(vector<vector<int>> &vt, int nodes, int source)
 {
     unordered_map<int, list<pair<int, int>>> adj;
     int u, v, w;
-    for (auto i : vt)
+    for (auto node : vt)
     {
-        u = i[0];
-        v = i[1];
-        w = i[2];
+        u = node[0];
+        v = node[1];
+        w = node[2];
         adj[u].push_back({v, w});
         adj[v].push_back({u, w});
     }

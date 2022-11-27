@@ -34,7 +34,6 @@ int main()
         if(ans[jobs[i].deadline-1] == 0){
             ans[jobs[i].deadline-1] = jobs[i].profit;
         } else{
-            // int j = mx_deadline
             int j = i;
             while(j >= 0 && ans[j] != 0){
                 j--;
