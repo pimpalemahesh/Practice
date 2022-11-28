@@ -7,7 +7,7 @@ inline bool cmp(pair<double, double> a, pair<double, double> b){
 int main()
 {
     double cap = 20, profit = 0;
-    vector<pair<double, double>> Items = {{25, 18}, {24, 15}, {15, 10}, {20,10}};
+    vector<pair<double, double>> Items = {{25, 18}, {24, 15}, {15, 10}};
     sort(Items.begin(), Items.end(), cmp);
     for(auto item : Items){
         if(item.second <= cap){
