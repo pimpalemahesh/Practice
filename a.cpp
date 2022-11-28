@@ -31,7 +31,7 @@ vector<int> dj(vector<vector<int>> &vt, int nodes, int source)
         {
             if (node_distance + neighbor_node.second < dist[neighbor_node.first])
             {
-                auto original_node = st.find({dist[neighbor_node.first], neighbor_node.first});
+                auto original_node = st.find({neighbor_node.second, neighbor_node.first});
                 if (original_node != st.end())
                 {
                     st.erase({original_node});

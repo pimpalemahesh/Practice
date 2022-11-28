@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int bellmond_ford(int n, int m, int source, int dest, vector<vector<int>> edges){
+vector<int> bellmond_ford(int n, int source, vector<vector<int>> edges){
     vector<int> dist(n, INT_MAX);
     dist[source] = 0;
     int u, v, w;
@@ -25,17 +25,18 @@ int bellmond_ford(int n, int m, int source, int dest, vector<vector<int>> edges)
 
             if(dist[u] != INT_MAX && dist[u] + w < dist[v]){
                 cout << "Negative cycle present" << endl;
-                return -1;
+                return {};
             }
         }
     }
 
-    return dist[dest];
+    return dist;
 }
 int main()
 {
     vector<vector<int>> edges = {{1,2,6}, {1,3,5}, {1,4,5}, {2,5,-1}, {3,2,-2}, {3,5,1}, {4,3,-2}, {4,6,-1}, {5,7,3}, {6,7,3}};
-    cout << "Distance = " << bellmond_ford(7,10,1,5,edges) << endl;
+    vector<int> distance = bellmond_ford(7,1,edges);
+    cout << "Distance = " << distance[7] << endl;
 
     return 0;
 }

@@ -19,14 +19,6 @@ Point nextToTop(stack<Point> &S)
     return res;
 }
  
-// A utility function to swap two points
-int swap(Point &p1, Point &p2)
-{
-    Point temp = p1;
-    p1 = p2;
-    p2 = temp;
-}
- 
 // A utility function to return square of distance between p1 and p2
 int dist(Point p1, Point p2)
 {

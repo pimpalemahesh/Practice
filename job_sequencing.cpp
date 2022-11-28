@@ -13,7 +13,7 @@ public:
     }
 };
 
-bool job_cmp(Job a, Job b)
+inline bool job_cmp(Job a, Job b)
 {
     return a.profit > b.profit;
 }
@@ -34,7 +34,7 @@ int main()
         if(ans[jobs[i].deadline-1] == 0){
             ans[jobs[i].deadline-1] = jobs[i].profit;
         } else{
-            int j = i;
+            int j = jobs[i].deadline;
             while(j >= 0 && ans[j] != 0){
                 j--;
             }

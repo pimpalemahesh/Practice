@@ -22,9 +22,7 @@ int G[V][V] = {
 int main()
 {
     int x, y, no_edge = 0;
-    int selected[V];
-
-    memset(selected, false, sizeof(selected));
+    vector<bool> selected(V, false);
 
     selected[0] = true;
     cout << "Edge : Weight" << endl;

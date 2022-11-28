@@ -49,19 +49,19 @@ int printJobScheduling(vector<Job> Jobs)
     for(int i = 0; i < maxDeadline+1; i++){
         parent[i] = i;
     }
-    for (int i = 0; i < Jobs.size(); i++)
+    for (auto job : Jobs)
     {
-        int availableSlot = find(Jobs[i].deadLine, parent);
+        int availableSlot = find(job.deadLine, parent);
         if (availableSlot > 0)
         {
             merge(find(availableSlot - 1, parent), availableSlot, parent);
-            cout << Jobs[i].id << " ";
+            cout << job.id << " ";
         }
     }
 }
 int main()
 {
-    vector<Job> jobs = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 1, 25}, {'e', 3, 15}};
+    vector<Job> jobs = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 3, 25}, {'e', 3, 15}};
     cout << "Job Sequence for maximum profit :" << endl;
     printJobScheduling(jobs);
     return 0;
